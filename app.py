@@ -27,3 +27,10 @@ def register():
     # TODO: Aarav, you need to add the code to redirect to the index page.
     return render_template('register.html')
 
+@app.route('/login', methods=('GET', 'POST'))
+def login():
+    if request.method == 'GET':
+        return render_template('login.html')
+    # TODO: Aarav, you need to add the code to insert the user into the database.
+    # TODO: Aarav, you need to add the code to redirect to the index page.
+    return render_template('login.html')
