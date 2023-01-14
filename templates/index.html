@@ -1,0 +1,9 @@
+{% extends 'base.html' %} {% block content %}
+<h1>{% block title %} yeeaw {% endblock %}</h1>
+{% for user in users %}
+<div class="notpost">
+  <p>{{ user['created'] }}</p>
+  <p>{{ user['email'] }}</p>
+  <p>{{ user['name'] }}</p>
+</div>
+{% endfor %} {% endblock %}
