@@ -24,6 +24,19 @@ def register():
     if request.method == 'GET':
         return render_template('register.html')
     # TODO: Aarav, you need to add the code to insert the user into the database.
+    print(request.form["email"])
+    connection = get_db_connection()
+    cur = connection.cursor()
+    cur.execute("INSERT INTO users (email, person, age, phone, country, cohort, addr) VALUES (?,?, ?, ?, ?, ?, ?)",
+                (request.form["email"], request.form["name"],request.form["age"] ,request.form["phone"] ,
+                'America', '0',request.form["address"])
+                )
+
+    connection.commit()
+    connection.close()
+    flash("You have successfully registered")
     # TODO: Aarav, you need to add the code to redirect to the index page.
-    return render_template('register.html')
+
+
+    return redirect('/')
 

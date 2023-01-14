@@ -13,8 +13,8 @@ with open("schema.sql", encoding="utf-8") as f:
 cur = connection.cursor()
 
 # Create two sample people, just for fun.
-cur.execute("INSERT INTO users (email, age, phone, country, cohort, addr) VALUES (?,?, ?, ?, ?, ?)",
-            ('melwaninate@gmail.com', 21, '7148512888', 'country', '1', '900 universary ave')
+cur.execute("INSERT INTO users (email, person, age, phone, country, cohort, addr) VALUES (?,?, ?, ?, ?, ?, ?)",
+            ('melwaninate@gmail.com', 'Nate Melwani', 21, '7148512888', 'country', '1', '900 universary ave')
             )
 
 connection.commit()
