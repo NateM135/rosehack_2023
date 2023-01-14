@@ -19,7 +19,11 @@ def index():
     conn.close()
     return render_template('index.html', users=users)
 
-@app.route('/create', methods=('GET', 'POST'))
-def create():
-    return render_template('create.html')
+@app.route('/register', methods=('GET', 'POST'))
+def register():
+    if request.method == 'GET':
+        return render_template('register.html')
+    # TODO: Aarav, you need to add the code to insert the user into the database.
+    # TODO: Aarav, you need to add the code to redirect to the index page.
+    return render_template('register.html')
 
