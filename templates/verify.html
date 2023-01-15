@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Phone Number Form</title>
+    <style>
+      /* Some basic styling for the form */
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 20px;
+        padding: 20px;
+      }
+      input[type="text"] {
+        font-size: 20px;
+        padding: 5px;
+        margin: 5px;
+        border-radius: 5px;
+        border: 1px solid gray;
+      }
+      input[type="submit"] {
+        font-size: 20px;
+        padding: 5px;
+        margin: 5px;
+        border-radius: 5px;
+        border: 1px solid gray;
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/phone" method="post">
+      <label for="phone-number"
+        >Enter the 6-digit sent to your phone number:</label
+      >
+      <input type="text" id="code" name="code" pattern="[0-9]{6}" required />
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
+{% endblock %}

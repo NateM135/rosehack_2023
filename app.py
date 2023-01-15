@@ -5,6 +5,7 @@ from twilio.rest import Client
 from twilio.base.exceptions import TwilioRestException
 from dotenv import load_dotenv
 from os import getenv
+import random
 
 load_dotenv()
 
@@ -26,6 +27,19 @@ def index():
         print(user['email'])
     conn.close()
     return render_template('index.html', users=users, name=[session['name']] if 'name' in session else None)
+
+@app.route('/verify')
+def verify():
+    return render_template('verify.html')
+
+@app.route('/phone',methods=('GET', 'POST'))
+def phone():
+    if request.method == 'GET':
+        return redirect(url_for('verify'))
+    if int(request.form['code']) == int(session['code']):
+        session['logged_in'] = True
+        return redirect(url_for('index'))
+    return render_template('verify.html')
 
 @app.route('/register', methods=('GET', 'POST'))
 def register():
@@ -58,7 +72,7 @@ def login():
     if user:
         for item in user:
             print(f"{item}")
-        session['logged_in'] = True
+        #session['logged_in'] = True
         session['name'] = user['person']
         print(session)
 
@@ -74,14 +88,23 @@ def login():
         # hardcoded phone number in the demo. In practice, you would use the user's phone number, which
         # can be accessed via the request.form object
 
+        if 'code' not in session:
+            session['code'] = random.randint(100000, 999999) # Let's pretend you didnt see this
+
         try:
             message = client.messages.create(
                 to=demo_num, 
                 from_=from_num,
-                body="Please enter the following code to continue logging into the demo site: 241353")
+                body=f"Please enter the following code to continue logging into the demo site: {session['code']}")
         except TwilioRestException as err:
             print("Twilio authentication has failed")
             print(err)
-        flash('You have successfully logged in')
+        flash('Please enter the code sent to your phone')
+        return redirect(url_for('verify'))
 
+    return redirect(url_for('index'))
+
+@app.route('/logout')
+def logout():
+    session.clear()
     return redirect(url_for('index'))
