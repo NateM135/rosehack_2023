@@ -1,0 +1,84 @@
+{% extends 'base.html' %} {% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profile Page</title>
+    <script>
+      function joinProfile(profileId) {
+        const form = document.createElement("form");
+        form.method = "post";
+        //form.action = `/cohort/${profileId}`;
+        form.action = "/cohort";
+        document.body.appendChild(form);
+        form.submit();
+      }
+    </script>
+    <style>
+      /* Style for the profile sections */
+      .profile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 20px;
+      }
+      /* Style for the profile picture */
+      .profile img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+      }
+      /* Style for the profile title */
+      .profile h2 {
+        margin-top: 10px;
+        color: #333;
+      }
+      /* Style for the profile information */
+      .profile p {
+        margin-top: 10px;
+        color: #555;
+        text-align: center;
+      }
+      /* Style for the join button */
+      .profile .join-button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: green;
+        color: #fff;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="profile">
+      <img
+        src="https://media.licdn.com/dms/image/D5603AQHv62HMBlQ2sA/profile-displayphoto-shrink_100_100/0/1646702660645?e=1679529600&v=beta&t=EPYRd_O1mz8Lk54bBW3jKYYtrMFg_6IcZyzlnQQ0TLk"
+        alt="Profile Picture"
+      />
+      <h2>Chloe Au</h2>
+      <p>
+        Chloe is a strong advocate for the use of technology to improve the
+        lives of others. She has a background in software engineering and is
+        currently pursuing a Bachler's degree in Data Science.
+      </p>
+      <h2>Location</h2>
+      <p>Beijing, China</p>
+      <button class="join-button" onclick="joinProfile(1)">Join</button>
+    </div>
+    <div class="profile">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/en/a/a6/Pok%C3%A9mon_Pikachu_art.png"
+        alt="Profile Picture"
+      />
+      <h2>Pikachu</h2>
+      <p>pika pika</p>
+      <h2>Location</h2>
+      <p>Beijing, China</p>
+      <button class="join-button" onclick="joinProfile(2)">Join</button>
+    </div>
+  </body>
+</html>
+
+{% endblock %}

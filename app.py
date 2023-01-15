@@ -128,3 +128,9 @@ def country():
     session['country'] = countrycodes[request.form['country-code']] if request.form['country-code'] in countrycodes else request.form['country-code']
     session['province'] = provinceMap[request.form['province-code']] if request.form['province-code'] in provinceMap else request.form['province-code']
     return redirect(url_for('portal'))
+
+@app.route('/cohorts', methods=('GET', 'POST'))
+def cohorts():
+    if request.method == 'GET':
+        return render_template('cohorts.html')
+    session['cohort'] = request.form['cohort']
