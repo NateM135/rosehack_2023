@@ -5,7 +5,9 @@ coding is difficult
 ## Team
 
 - Nathan Melwani
+
 - Chloe Au
+
 - Aarav Sane
 
 ## Technologies Used
@@ -13,14 +15,21 @@ coding is difficult
 ### WebApp
 
 Backend: Python (Flask)
+
 Database: SQLite
+
+Authentication: Twilio
+
 Templating Engine: Jinja2
+
 Frontend: HTML, CSS, Javascript
 
 ### Data Visualization
 
 Data Scaping: Python
-Data Processing: Python + Excel
+
+Data Processing: Python + Excel (See `data/`)
+
 Data Visualization: Tableau
 
 ### Other
