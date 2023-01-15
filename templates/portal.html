@@ -40,8 +40,8 @@
       alt="Chinese Flag"
     />
     <h1>Welcome, {{ session["name"] }}</h1>
-    <p>Your country code is: {{ session["country"] }}</p>
-    <p>Your Chinese province code is: {{ session["province"] }}</p>
+    <p>Your country is: {{ session["country"] }}</p>
+    <p>Your province is: {{ session["province"] }}</p>
     {% if 'job' in session %}
     <p>Your selected job is {{session["job"]}}.</p>
     {% endif %} {% if 'cohort' in session %}
