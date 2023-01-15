@@ -1,6 +1,6 @@
 
 import sqlite3
-from flask import Flask, render_template, url_for, flash, redirect, request
+from flask import Flask, render_template, url_for, flash, redirect, request, session
 
 app = Flask(__name__)
 app.config['SECRET_KEY']="dragon"
@@ -36,14 +36,20 @@ def register():
     connection.close()
     flash("You have successfully registered")
     # TODO: Aarav, you need to add the code to redirect to the index page.
-
-
     return redirect('/')
 
 @app.route('/login', methods=('GET', 'POST'))
 def login():
+    print('login route')
     if request.method == 'GET':
         return render_template('login.html')
-    # TODO: Aarav, you need to add the code to insert the user into the database.
-    # TODO: Aarav, you need to add the code to redirect to the index page.
-    return render_template('login.html')
+    connection = get_db_connection()
+    cur = connection.cursor()
+    user = cur.execute('SELECT * FROM users where email = ?', (request.form['email'],)).fetchone()
+    if user:
+        for item in user:
+            print(f"{item}")
+        session['logged_in'] = True
+        session['email'] = user['email']
+        flash('You have successfully logged in')
+    return redirect(url_for('index'))
