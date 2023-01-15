@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Portal Page</title>
+    <style>
+      /* Add some styling for the page */
+      h1 {
+        text-align: center;
+      }
+      p {
+        text-align: center;
+      }
+      button {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      /* Add hover effect to the button */
+      button:hover {
+        background-color: #3e8e41;
+      }
+      /* center the flag image */
+      .flag-img {
+        display: block;
+        margin: 0 auto;
+        width: 25%;
+        height: 25%;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="https://cdn.britannica.com/90/7490-004-BAD4AA72/Flag-China.jpg"
+      class="flag-img"
+      alt="Chinese Flag"
+    />
+    <h1>Welcome, {{ session["name"] }}</h1>
+    <p>Your country code is: {{ session["country"] }}</p>
+    <p>Your Chinese province code is: {{ session["province"] }}</p>
+    <button onclick="window.location.href = 'join_cohort.php';">
+      Join a Cohort!
+    </button>
+  </body>
+</html>
+{% endblock %}

@@ -7,6 +7,8 @@ from dotenv import load_dotenv
 from os import getenv
 import random
 
+from util.ISO3166 import countrycodes
+
 load_dotenv()
 
 app = Flask(__name__)
@@ -108,3 +110,20 @@ def login():
 def logout():
     session.clear()
     return redirect(url_for('index'))
+
+@app.route('/portal')
+def portal():
+    print(session)
+    if not 'logged_in' in session:
+        return redirect(url_for('index'))
+    if 'country' not in session:
+        return redirect(url_for('country'))
+    return render_template('portal.html', country=session['country'], province=session['province'])
+
+@app.route('/country', methods=('GET', 'POST'))
+def country():
+    if request.method == 'GET':
+        return render_template('country.html')
+    session['country'] = countrycodes[request.form['country-code']]
+    session['province'] = request.form['province-code']
+    return redirect(url_for('portal'))

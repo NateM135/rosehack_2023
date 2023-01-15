@@ -1,0 +1,101 @@
+{% extends 'base.html' %} {% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Country Form</title>
+    <script>
+      function showProvince() {
+        var countrySelect = document.getElementById("country-select");
+        var provinceSelect = document.getElementById("province-select");
+        if (countrySelect.value === "CN") {
+          provinceSelect.style.display = "block";
+        } else {
+          provinceSelect.style.display = "none";
+        }
+      }
+    </script>
+    <style>
+      /* Some basic styling for the form */
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 20px;
+        padding: 20px;
+      }
+      select {
+        font-size: 20px;
+        padding: 5px;
+        margin: 5px;
+        border-radius: 5px;
+        border: 1px solid gray;
+      }
+      input[type="submit"] {
+        font-size: 20px;
+        padding: 5px;
+        margin: 5px;
+        border-radius: 5px;
+        border: 1px solid gray;
+        background-color: #4caf50;
+        color: white;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/country" method="post">
+      <label for="country-select">Select your country:</label>
+      <select id="country-select" name="country-code" onchange="showProvince()">
+        <option value="AF">Afghanistan</option>
+        <option value="AL">Albania</option>
+        <option value="DZ">Algeria</option>
+        <option value="CN">China</option>
+        <option value="US">United States</option>
+        <option value="RU">Russia</option>
+        <option value="CA">Canada</option>
+        <!-- Additional country options can be added here -->
+      </select>
+      <label for="province-select" id="province-label" style="display: none"
+        >Select your province:</label
+      >
+      <select id="province-select" name="province-code" style="display: none">
+        <option value="BJ">Beijing</option>
+        <option value="SH">Shanghai</option>
+        <option value="TJ">Tianjin</option>
+        <option value="CQ">Chongqing</option>
+        <option value="AH">Anhui</option>
+        <option value="FJ">Fujian</option>
+        <option value="GS">Gansu</option>
+        <option value="GD">Guangdong</option>
+        <option value="GZ">Guizhou</option>
+        <option value="HI">Hainan</option>
+        <option value="HE">Hebei</option>
+        <option value="HL">Heilongjiang</option>
+        <option value="HA">Henan</option>
+        <option value="HB">Hubei</option>
+        <option value="HN">Hunan</option>
+        <option value="JS">Jiangsu</option>
+        <option value="JX">Jiangxi</option>
+        <option value="JL">Jilin</option>
+        <option value="LN">Liaoning</option>
+        <option value="QH">Qinghai</option>
+        <option value="SN">Shaanxi</option>
+        <option value="SD">Shandong</option>
+        <option value="SX">Shanxi</option>
+        <option value="SC">Sichuan</option>
+        <option value="YN">Yunnan</option>
+        <option value="ZJ">Zhejiang</option>
+        <option value="TW">Taiwan</option>
+        <option value="XJ">Xinjiang</option>
+        <option value="XZ">Xizang (Tibet)</option>
+        <option value="NX">Ningxia</option>
+        <option value="NM">Inner Mongolia</option>
+        <option value="HK">Hong Kong</option>
+      </select>
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
+
+{% endblock %}
