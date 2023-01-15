@@ -8,6 +8,7 @@ from os import getenv
 import random
 
 from util.ISO3166 import countrycodes
+from util.provinces import provinceMap
 
 load_dotenv()
 
@@ -124,6 +125,6 @@ def portal():
 def country():
     if request.method == 'GET':
         return render_template('country.html')
-    session['country'] = countrycodes[request.form['country-code']]
-    session['province'] = request.form['province-code']
+    session['country'] = countrycodes[request.form['country-code']] if request.form['country-code'] in countrycodes else request.form['country-code']
+    session['province'] = provinceMap[request.form['province-code']] if request.form['province-code'] in provinceMap else request.form['province-code']
     return redirect(url_for('portal'))

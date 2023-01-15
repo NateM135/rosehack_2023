@@ -1,0 +1,2 @@
+
+provinceMap = {'BJ': 'Beijing', 'SH': 'Shanghai', 'TJ': 'Tianjin', 'CQ': 'Chongqing', 'AH': 'Anhui', 'FJ': 'Fujian', 'GS': 'Gansu', 'GD': 'Guangdong', 'GZ': 'Guizhou', 'HI': 'Hainan', 'HE': 'Hebei', 'HL': 'Heilongjiang', 'HA': 'Henan', 'HB': 'Hubei', 'HN': 'Hunan', 'JS': 'Jiangsu', 'JX': 'Jiangxi', 'JL': 'Jilin', 'LN': 'Liaoning', 'QH': 'Qinghai', 'SN': 'Shaanxi', 'SD': 'Shandong', 'SX': 'Shanxi', 'SC': 'Sichuan', 'YN': 'Yunnan', 'ZJ': 'Zhejiang', 'TW': 'Taiwan', 'XJ': 'Xinjiang', 'XZ': 'Xizang (Tibet)', 'NX': 'Ningxia', 'NM': 'Inner Mongolia', 'HK': 'Hong Kong'}
