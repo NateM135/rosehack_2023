@@ -7,10 +7,16 @@
       function showProvince() {
         var countrySelect = document.getElementById("country-select");
         var provinceSelect = document.getElementById("province-select");
+        var provinceData = document.getElementById("province-data");
+        var provinceImage = document.getElementById("province-image");
         if (countrySelect.value === "CN") {
           provinceSelect.style.display = "block";
+          provinceData.style.display = "block";
+          provinceImage.src =
+            "https://cdn.discordapp.com/attachments/989196355199205456/1064155423403421706/Sheet_1.png";
         } else {
           provinceSelect.style.display = "none";
+          provinceData.style.display = "none";
         }
       }
     </script>
@@ -56,6 +62,11 @@
         <option value="CA">Canada</option>
         <!-- Additional country options can be added here -->
       </select>
+
+      <div style="text-align: center" id="province-data" style="display: none">
+        <img id="province-image" src="" />
+      </div>
+
       <label for="province-select" id="province-label" style="display: none"
         >Select your province:</label
       >
