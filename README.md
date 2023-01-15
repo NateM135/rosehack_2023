@@ -1,6 +1,6 @@
 # Rosehack 2023
 
-Across the globe, women have a lower labor force participation rate compared to men due to less access to economic resources, spending a substantial amount of time on unpaid care work and domestic labor, and cultural forces tying them to familial duties. 
+Across the globe, women have a lower labor force participation rate compared to men due to less access to economic resources, spending a substantial amount of time on unpaid care work and domestic labor, and cultural forces tying them to familial duties.
 
 Working Women is an online training, job-matching, and coaching program that aims to increase employment for young women. This program provides girls aged 16-27 with life skills, training, and job placement assistance. The application is a tool designed to assist women in finding employment opportunities in specific areas within their country. The application utilizes demographic data specific to the user's country to provide targeted job suggestions and resources.
 
@@ -14,11 +14,35 @@ Working Women benefits girls by training them with employable skills tailored to
 
 ## Data
 
-The data was obtained from the National Bureau of Statistics of China, 2019 Statistical Yearbook. Screenshots captured from this statistical yearbook was then processed by an online Optical Character Recognition software and the data was then exported into an excel spreadsheet. The data was then further broken down into various combinations of years, region, and industries to show different trends in the data. 
+The data was obtained from the National Bureau of Statistics of China, 2019 Statistical Yearbook. Screenshots captured from this statistical yearbook was then processed by an online Optical Character Recognition software and the data was then exported into an excel spreadsheet. The data was then further broken down into various combinations of years, region, and industries to show different trends in the data.
 
-These smaller tables were then visualized using Tableau bar graphs and other visualization methods. 
+These smaller tables were then visualized using Tableau bar graphs and other visualization methods.
 
 ## Screenshots
+
+Home Page
+
+![Alt text](/screenshots/home_page.png)
+
+Registration
+
+![Alt text](/screenshots/registration.png)
+
+Login
+
+![Alt text](/screenshots/login.png)
+
+Twilio Authentication
+
+![Alt text](/screenshots/twilio.png)
+
+Country Selection
+
+![Alt text](/screenshots/country_selection.png)
+
+Country/Subsection Selection (State, Providence, etc)
+
+![Alt text](/screenshots/country_providence_selection.png)
 
 ## Team
 
