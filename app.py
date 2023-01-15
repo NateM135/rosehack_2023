@@ -43,7 +43,8 @@ def phone():
     if int(request.form['code']) == int(session['code']):
         session['logged_in'] = True
         return redirect(url_for('index'))
-    return render_template('verify.html')
+    flash("Incorrect code entered. Please try again.")
+    return redirect(url_for('phone'))
 
 @app.route('/register', methods=('GET', 'POST'))
 def register():
@@ -106,6 +107,7 @@ def login():
         flash('Please enter the code sent to your phone')
         return redirect(url_for('verify'))
 
+    flash("An account with the provided credentials does not exist. Please try again.")
     return redirect(url_for('index'))
 
 @app.route('/logout')

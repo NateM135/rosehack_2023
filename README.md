@@ -8,6 +8,8 @@ Users can also join cohorts lead by curated leaders from nearby locations. These
 
 Overall, this application aims to empower women to take control of their career paths by providing them with the resources and information they need to identify and pursue job opportunities availble in their geograhic area.
 
+## Screenshots
+
 ## Team
 
 - Nathan Melwani
