@@ -44,6 +44,26 @@ Country/Subsection Selection (State, Providence, etc)
 
 ![Alt text](/screenshots/country_providence_selection.png)
 
+Occupation Info
+
+![Alt text](/screenshots/occupation_info.png)
+
+Visualization Example
+
+![Alt text](/screenshots/country_province_selection.png)
+
+Portal
+
+![Alt text](/screenshots/portal_profile.png)
+
+Cohort Selection
+
+![Alt text](/screenshots/cohort_selection.png)
+
+Cohort Info
+
+![Alt text](/screenshots/cohort_info.png)
+
 ## Team
 
 - Nathan Melwani
