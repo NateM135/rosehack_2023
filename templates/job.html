@@ -3,42 +3,133 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <script>
+        function showProvince() {
+          var jobSelect = document.getElementById("job-select");
+          if (jobSelect.value === "CN") {
+            provinceSelect.style.display = "block";
+            provinceData.style.display = "block";
+            provinceImage.src =
+              "https://cdn.discordapp.com/attachments/989196355199205456/1064155423403421706/Sheet_1.png";
+          } else {
+            provinceSelect.style.display = "none";
+            provinceData.style.display = "none";
+          }
+        }
+      </script>
     <title>Job Selection</title>
     <style>
-      /* Styles for the unordered list */
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
+        /* Styles for the unordered list */
+        ul {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        /* Styles for the list items */
+        li {
+          padding: 10px;
+          margin: 10px 0;
+          border: 1px solid gray;
+          cursor: pointer;
+        }
+        form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 20px;
+        padding: 20px;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 20px;
+        padding: 20px;
       }
 
-      /* Styles for the list items */
-      li {
-        padding: 10px;
-        margin: 10px 0;
-        border: 1px solid gray;
-        cursor: pointer;
-      }
+        /* Styles for the green button */
+        .green-button {
+          background-color: green;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          cursor: pointer;
+        }
+        input[type="submit"] {
+          font-size: 20px;
+          padding: 5px;
+          margin: 5px;
+          border-radius: 5px;
+          border: 1px solid gray;
+          background-color: #4caf50;
+          color: white;
+          cursor: pointer;
+        }
 
-      /* Styles for the green button */
-      .green-button {
-        background-color: green;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-      }
+        body {
+            text-align: center;
+        }
+      </style
     </style>
   </head>
   <body>
-    <h1>Select a Job</h1>
-    <form method="post" action="/job">
-      <ul>
-        <li><input type="radio" name="job" value="Developer" />Developer</li>
-        <li><input type="radio" name="job" value="Designer" />Designer</li>
-        <li><input type="radio" name="job" value="Sales" />Sales</li>
-      </ul>
-      <button class="green-button">Submit</button>
+    <h1>Ocupations</h1>
+
+    <div class="viz">
+    <tableau-viz
+      id="tableau-viz"
+      src="https://10az.online.tableau.com/t/rosehack/views/Book2_2/Hebei"
+      width="1233"
+      height="642"
+      hide-tabs
+      toolbar="bottom"
+      margin: 0 auto;
+    >
+    </tableau-viz>
+    </div>
+
+    <form action="/job" method="post">
+      <label for="job-select">Select an ocupation:</label>
+      <select id="job-select" name="job">
+        <option value="Agriculture">Agriculture</option>
+        <option value="Construction">Construction</option>
+        <option value="Culture Sports and Entertainment">
+          Culture Sports and Entertainment
+        </option>
+        <option value="Education">Education</option>
+        <option value="Employed">Employed</option>
+        <option value="Financial Intermediation">
+          Financial Intermediation
+        </option>
+        <option value="Health and Social Service">
+          Health and Social Service
+        </option>
+        <option value="Hotels and Catering Services">
+          Hotels and Catering Services
+        </option>
+        <option
+          value="Information Transmission, Software and Information Technology"
+        >
+          Information Transmission, Software and Information Technology
+        </option>
+        <option value="Leasing and Business Services">
+          Leasing and Business Services
+        </option>
+        <option
+          value="Management of Water Conservancy Environment and Public Facilities"
+        >
+          Management of Water Conservancy Environment and Public Facilities
+        </option>
+        <option value="Manufacturing">Manufacturing</option>
+        <option value="Mining">Mining</option>
+        <option value="Production and Supply of Electricity Heat Gas and Water">
+          Production and Supply of Electricity Heat Gas and Water
+        </option>
+      </select>
+      <input type="submit" value="Submit" />
     </form>
   </body>
 </html>

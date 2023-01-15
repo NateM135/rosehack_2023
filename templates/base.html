@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script
+      type="module"
+      src="https://10az.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"
+    ></script>
     <meta charset="UTF-8" />
     <title>{% block title %} {% endblock %}</title>
     <style>
@@ -10,11 +14,26 @@
         background-color: #f3f3f3;
       }
 
-      nav a {
-        color: #d64161;
-        font-size: 3em;
-        margin-left: 50px;
+      a {
+        color: #d8aed3;
         text-decoration: none;
+        border-bottom: 1px solid #d8aed3;
+        padding-bottom: 3px;
+      }
+
+      a:hover {
+        color: #d8aed3;
+      }
+      p {
+        font-size: 1.5em;
+        margin-top: 30px;
+      }
+
+      body {
+        background-color: #9182c4; /* purple background */
+        font-family: Arial, sans-serif;
+        color: #ebd9dd;
+        text-align: center;
       }
 
       .alert {

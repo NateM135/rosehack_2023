@@ -9,6 +9,7 @@ import random
 
 from util.ISO3166 import countrycodes
 from util.provinces import provinceMap
+from util.jobdata import jobdata
 
 load_dotenv()
 

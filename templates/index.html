@@ -1,9 +1,52 @@
 {% extends 'base.html' %} {% block content %}
 <h1>{% block title %} yeehaw {% endblock %}</h1>
-{% for user in users %}
-<div class="notpost">
-  <p>{{ user['created'] }}</p>
-  <p>{{ user['email'] }}</p>
-  <p>{{ user['name'] }}</p>
-</div>
-{% endfor %} {% endblock %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Placeholder</title>
+    <style>
+      /* Body styling */
+      body {
+        background-color: #9182c4; /* purple background */
+        font-family: Arial, sans-serif;
+        color: #ebd9dd;
+        text-align: center;
+      }
+
+      /* Heading styling */
+      h1 {
+        font-size: 4em;
+        margin-top: 50px;
+      }
+
+      /* Description styling */
+      p {
+        font-size: 1.5em;
+        margin-top: 30px;
+      }
+
+      /* Link styling */
+      a {
+        color: #d8aed3;
+        text-decoration: none;
+        border-bottom: 1px solid #d8aed3;
+        padding-bottom: 3px;
+      }
+
+      a:hover {
+        color: #d8aed3;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Welcome to Placeholder, a project that uses advanced statistics to match
+      and train groups of people. <br />
+      Learn more about our project and get started by clicking the link below.
+    </p>
+    <a href="about.html">Learn More</a>
+  </body>
+</html>
+
+{% endblock %}
