@@ -12,6 +12,11 @@ Overall, this application aims to empower women to take control of their career 
 
 Working Women benefits girls by training them with employable skills tailored to their location, and benefits companies by providing a capable and diverse workforce. Many organizations already offer some type of gender parity program, but we aim to streamline this process by connecting with employers in the region to find in-demand skills in industries. This will lead to a more sustainable program due to its mutual beneficiaries. In addition, there is an alumni association so that after girls “graduate” into the workforce, they can return to mentor as cohort leaders and help employ more girls into their company or industry. These programs allow our program to be self-sustaining.
 
+## Data
+
+The data was obtained from the National Bureau of Statistics of China, 2019 Statistical Yearbook. Screenshots captured from this statistical yearbook was then processed by an online Optical Character Recognition software and the data was then exported into an excel spreadsheet. The data was then further broken down into various combinations of years, region, and industries to show different trends in the data. 
+
+These smaller tables were then visualized using Tableau bar graphs and other visualization methods. 
 
 ## Screenshots
 
