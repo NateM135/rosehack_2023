@@ -12,12 +12,14 @@ def get_db_connection():
 
 @app.route('/')
 def index():
+    print('here')
+    print(session)
     conn = get_db_connection()
     users = conn.execute('SELECT * FROM users').fetchall()
     for user in users:
         print(user['email'])
     conn.close()
-    return render_template('index.html', users=users)
+    return render_template('index.html', users=users, name=[session['name']] if 'name' in session else None)
 
 @app.route('/register', methods=('GET', 'POST'))
 def register():
@@ -50,6 +52,7 @@ def login():
         for item in user:
             print(f"{item}")
         session['logged_in'] = True
-        session['email'] = user['email']
+        session['name'] = user['person']
+        print(session)
         flash('You have successfully logged in')
     return redirect(url_for('index'))

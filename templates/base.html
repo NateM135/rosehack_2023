@@ -28,10 +28,16 @@
   <body>
     <nav>
       <a href="{{ url_for('index') }}">Home</a>
+      {% if not session['logged_in'] %}
       <a href="{{ url_for('register') }}">Register</a>
       <a href="{{ url_for('login') }}">Login</a>
-      <a href="#">About</a>
+      {% endif %} {% if session['logged_in'] %}
+      <a href="#">Logout</a>
+      {% endif %}
     </nav>
+    {% if session['logged_in'] %}
+    <a href="#">Logged in as {{session['name']}}</a>
+    {% endif %}
     <hr />
     <div class="content">
       {% for message in get_flashed_messages() %}
