@@ -63,13 +63,11 @@
   </head>
   <body>
     <div class="profile">
-      <img src="https://via.placeholder.com/200x200" alt="Profile Picture" />
+      <img src="{{ cohort['leaderpicurl'] }}" alt="Profile Picture" />
       <div>
-        <h1>John Doe</h1>
+        <h1>{{ cohort['leader'] }}</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor,
-          nibh a bibendum luctus, augue leo luctus eros, non auctor nibh risus
-          eget nibh. Nam eget malesuada magna.
+            {{ cohort['descrip'] }}
         </p>
       </div>
     </div>

@@ -42,15 +42,26 @@
     <h1>Welcome, {{ session["name"] }}</h1>
     <p>Your country code is: {{ session["country"] }}</p>
     <p>Your Chinese province code is: {{ session["province"] }}</p>
-    {% if 'cohort' in session %}
+    {% if 'job' in session %}
+    <p>Your selected job is {{session["job"]}}.</p>
+    {% endif %} {% if 'cohort' in session %}
     <button onclick="v = 'viewCohort'; window.location.href = '/viewCohort'" ;>
       Go To Cohort!
     </button>
-    {% endif %} {% if 'cohort' not in session %}
+    {% endif %} {% if 'job' in session %}
+    <button onclick="window.location.href = '/job'" ;>Change Job</button>
+    {% endif %} <br />
+    <br />
+    {% if 'cohort' not in session %}
     <button onclick="window.location.href = '/cohorts'" ;>
       Join a Cohort!
     </button>
     {% endif %}
+    <div style="text-align: center">
+      <img
+        src="https://cdn.discordapp.com/attachments/989196355199205456/1064155423403421706/Sheet_1.png"
+      />
+    </div>
   </body>
 </html>
 {% endblock %}
