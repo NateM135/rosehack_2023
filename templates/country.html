@@ -8,12 +8,12 @@
         var countrySelect = document.getElementById("country-select");
         var provinceSelect = document.getElementById("province-select");
         var provinceData = document.getElementById("province-data");
-        var provinceImage = document.getElementById("province-image");
+        var provinceImage = document.getElementById("tableau-viz");
         if (countrySelect.value === "CN") {
           provinceSelect.style.display = "block";
           provinceData.style.display = "block";
           provinceImage.src =
-            "https://cdn.discordapp.com/attachments/989196355199205456/1064155423403421706/Sheet_1.png";
+            "https://10az.online.tableau.com/t/rosehack/views/Book6_1/Sheet1";
         } else {
           provinceSelect.style.display = "none";
           provinceData.style.display = "none";
@@ -67,15 +67,15 @@
         <img id="province-image" src="" />
       </div>
 
-      <!-- <tableau-viz
+      <tableau-viz
         id="tableau-viz"
-        src="https://10az.online.tableau.com/t/rosehack/views/Book4/Sheet1"
         width="1233"
         height="642"
         hide-tabs
         toolbar="bottom"
+        display: none
       >
-      </tableau-viz> -->
+      </tableau-viz>
 
       <label for="province-select" id="province-label" style="display: none"
         >Select your province:</label
