@@ -1,0 +1,108 @@
+{% extends 'base.html' %} {% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profile Page</title>
+    <style>
+      /* Styles for the profile section */
+      .profile {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        background-color: #f2f2f2;
+      }
+
+      /* Styles for the profile picture */
+      .profile img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+
+      /* Styles for the profile description */
+      .profile p {
+        font-size: 18px;
+        line-height: 1.5;
+      }      /* Styles for the posts container */
+      .posts {
+        display: flex;
+        justify-content: center; /* center the elements horizontally */
+        align-items: center; /* center the elements vertically */
+        flex-wrap: wrap; /* wrap the elements if they don't fit in one line */
+      }
+      /* Styles for the posts container */
+      .posts {
+        display: flex;
+        justify-content: center; /* center the elements horizontally */
+        align-items: center; /* center the elements vertically */
+        flex-wrap: wrap; /* wrap the elements if they don't fit in one line */
+      }
+
+      /* Styles for the posts */
+      .post {
+        width: 300px;
+        padding: 20px;
+        margin: 20px;
+        background-color: #ffffff;
+        border: 1px solid gray;
+      }
+
+      /* Styles for the post title */
+      .post h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      /* Styles for the post content */
+      .post p {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="profile">
+      <img src="https://via.placeholder.com/200x200" alt="Profile Picture" />
+      <div>
+        <h1>John Doe</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor,
+          nibh a bibendum luctus, augue leo luctus eros, non auctor nibh risus
+          eget nibh. Nam eget malesuada magna.
+        </p>
+      </div>
+    </div>
+
+    <div class="posts">
+      <div class="post">
+        <h2>Post 1</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor,
+          nibh a bibendum luctus, augue leo luctus eros, non auctor nibh risus
+          eget nibh. Nam eget malesuada magna.
+        </p>
+      </div>
+
+      <div class="post">
+        <h2>Post 2</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor,
+          nibh a bibendum luctus, augue leo luctus eros, non auctor nibh risus
+          eget nibh. Nam eget malesuada magna.
+        </p>
+      </div>
+
+      <div class="post">
+        <h2>Post 3</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor,
+            nibh a bibendum luctus, augue leo luctus eros, non auctor nibh risus
+            eget nibh. Nam eget malesuada magna.
+          </p>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
+{% endblock %}

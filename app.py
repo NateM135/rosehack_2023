@@ -119,7 +119,16 @@ def portal():
         return redirect(url_for('index'))
     if 'country' not in session:
         return redirect(url_for('country'))
+    if 'job' not in session:
+        return redirect(url_for('job'))
     return render_template('portal.html', country=session['country'], province=session['province'])
+
+@app.route('/job', methods=('GET', 'POST'))
+def job():
+    if request.method == 'GET':
+        return render_template('job.html')
+    session['job'] = request.form['job']
+    return redirect(url_for('portal'))
 
 @app.route('/country', methods=('GET', 'POST'))
 def country():
@@ -135,4 +144,16 @@ def cohorts():
         conn = get_db_connection()
         cohorts = conn.execute('SELECT * FROM cohorts').fetchall()
         return render_template('cohorts.html', cohorts=cohorts)
-    session['cohort'] = request.form['cohort']
+    #conn = get_db_connection()
+   # cohort = conn.execute('SELECT * FROM cohorts where id = ?', (request.form['cohort'],)).fetchone()
+    print('in this func')
+    session['cohort'] = request.form['cohort_number']
+    #session['cohort_name'] = cohort['leader']
+    flash('You have successfully registered and joined a cohort!')
+    return redirect(url_for('portal'))
+
+@app.get('/viewCohort')
+def viewCohort():
+    conn = get_db_connection()
+    cohort = conn.execute('SELECT * FROM cohorts where id = ?', (session['cohort'],)).fetchone()
+    return render_template('viewCohort.html', cohort=cohort)

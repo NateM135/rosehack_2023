@@ -1,0 +1,46 @@
+{% extends 'base.html' %} {% block content %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Job Selection</title>
+    <style>
+      /* Styles for the unordered list */
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Styles for the list items */
+      li {
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid gray;
+        cursor: pointer;
+      }
+
+      /* Styles for the green button */
+      .green-button {
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Select a Job</h1>
+    <form method="post" action="/job">
+      <ul>
+        <li><input type="radio" name="job" value="Developer" />Developer</li>
+        <li><input type="radio" name="job" value="Designer" />Designer</li>
+        <li><input type="radio" name="job" value="Sales" />Sales</li>
+      </ul>
+      <button class="green-button">Submit</button>
+    </form>
+  </body>
+</html>
+
+{% endblock %}

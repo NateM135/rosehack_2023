@@ -42,9 +42,15 @@
     <h1>Welcome, {{ session["name"] }}</h1>
     <p>Your country code is: {{ session["country"] }}</p>
     <p>Your Chinese province code is: {{ session["province"] }}</p>
-    <button onclick="window.location.href = 'join_cohort.php';">
+    {% if 'cohort' in session %}
+    <button onclick="v = 'viewCohort'; window.location.href = '/viewCohort'" ;>
+      Go To Cohort!
+    </button>
+    {% endif %} {% if 'cohort' not in session %}
+    <button onclick="window.location.href = '/cohorts'" ;>
       Join a Cohort!
     </button>
+    {% endif %}
   </body>
 </html>
 {% endblock %}
