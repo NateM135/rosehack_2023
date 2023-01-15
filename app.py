@@ -132,5 +132,7 @@ def country():
 @app.route('/cohorts', methods=('GET', 'POST'))
 def cohorts():
     if request.method == 'GET':
-        return render_template('cohorts.html')
+        conn = get_db_connection()
+        cohorts = conn.execute('SELECT * FROM cohorts').fetchall()
+        return render_template('cohorts.html', cohorts=cohorts)
     session['cohort'] = request.form['cohort']

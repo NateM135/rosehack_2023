@@ -52,21 +52,16 @@
     </style>
   </head>
   <body>
+    {% for cohort in cohorts %}
     <div class="profile">
-      <img
-        src="https://media.licdn.com/dms/image/D5603AQHv62HMBlQ2sA/profile-displayphoto-shrink_100_100/0/1646702660645?e=1679529600&v=beta&t=EPYRd_O1mz8Lk54bBW3jKYYtrMFg_6IcZyzlnQQ0TLk"
-        alt="Profile Picture"
-      />
-      <h2>Chloe Au</h2>
-      <p>
-        Chloe is a strong advocate for the use of technology to improve the
-        lives of others. She has a background in software engineering and is
-        currently pursuing a Bachler's degree in Data Science.
-      </p>
+      <img src="{{ cohort['leaderpicurl'] }}" alt="Profile Picture" />
+      <h2>{{ cohort['leader'] }}</h2>
+      <p>{{ cohort['descrip'] }}</p>
       <h2>Location</h2>
-      <p>Beijing, China</p>
+      <p>{{ cohort['descrip'] }}</p>
       <button class="join-button" onclick="joinProfile(1)">Join</button>
     </div>
+    {% endfor %}
     <div class="profile">
       <img
         src="https://upload.wikimedia.org/wikipedia/en/a/a6/Pok%C3%A9mon_Pikachu_art.png"

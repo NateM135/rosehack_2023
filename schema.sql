@@ -17,6 +17,7 @@ CREATE TABLE cohorts (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     leader TEXT NOT NULL,
+    leaderpicurl TEXT NOT NULL,
     descrip TEXT NOT NULL,
     place TEXT NOT NULL
 );
